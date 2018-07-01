@@ -8,11 +8,12 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [HideInInspector]
     public List<Building> buildingsList = new List<Building>();
-    [HideInInspector]
     public List<CommercialBuilding> commercialList = new List<CommercialBuilding>();
     public Text happinesText;
     public Text powerText;
     public Text moneyText;
+    public Text inhibitorsText;
+    public Text employeesText;
     public Button removeButton;
     float happines;
     float power;
@@ -20,6 +21,10 @@ public class GameManager : MonoBehaviour
     public float money;
     [HideInInspector]
     public bool disableButtons = false;
+    [HideInInspector]
+    public int inhibitors;
+    [HideInInspector]
+    public int requiredEmps;
 
     //used to disable buildings with price higher than available money
     [SerializeField]
@@ -49,7 +54,7 @@ public class GameManager : MonoBehaviour
                 availableBuildings[i].buyingButton.interactable = true;
             }
         }
-        if(!disableButtons)
+        if (!disableButtons)
         {
             removeButton.interactable = false;
         }
@@ -63,7 +68,13 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
+
+            float workersToAvailableJobsRatio = requiredEmps > 0 ? (float)inhibitors / requiredEmps : 0;
+
+            workersToAvailableJobsRatio = workersToAvailableJobsRatio > 1 ? 1 : workersToAvailableJobsRatio;
+
+            int employees = (int)(workersToAvailableJobsRatio * requiredEmps);
 
             for (int i = 0; i < buildingsList.Count; i++)
             {
@@ -71,14 +82,20 @@ public class GameManager : MonoBehaviour
                 power += buildingsList[i].GetPower();
             }
 
+            float newMoneySum = 0;
+
             for (int i = 0; i < commercialList.Count; i++)
-            {
-                money += commercialList[i].GetMoney();
-            }
+                newMoneySum += commercialList[i].GetMoney();
+
+            newMoneySum *= workersToAvailableJobsRatio;
+
+            money += newMoneySum;
 
             happinesText.text = "Happines: " + happines;
             powerText.text = "Power: " + power;
             moneyText.text = "Money: " + money;
+            inhibitorsText.text = "Inhibitors: " + inhibitors;
+            employeesText.text = "Employees: " + employees;
         }
     }
 }

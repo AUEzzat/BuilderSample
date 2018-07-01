@@ -8,11 +8,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 751d5a78943e47d4393400b19ab23572, type: 3}
+  m_Script: {fileID: 11500000, guid: 534ea14db0af4af458d6986901367142, type: 3}
   m_Name: House
   m_EditorClassIdentifier: 
   price: 5
-  buyingButton: {fileID: 0}
-  building: {fileID: 114755794638394886, guid: 9a6f432168909f54dbd6f92a8c660b7f, type: 2}
+  building: {fileID: 114514374547945114, guid: 9a6f432168909f54dbd6f92a8c660b7f, type: 2}
   powerRate: -2
   happinesRate: 0
+  buyingButton: {fileID: 0}
+  accommodationBuilding: {fileID: 114514374547945114, guid: 9a6f432168909f54dbd6f92a8c660b7f,
+    type: 2}
+  accommodatorsNum: 3

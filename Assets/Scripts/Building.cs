@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Building : MonoBehaviour {
 
-    protected float powerRate;
-    protected float happinesRate;
+    [HideInInspector]
+    public float powerRate;
+    [HideInInspector]
+    public float happinesRate;
 
     protected virtual void OnEnable()
     {

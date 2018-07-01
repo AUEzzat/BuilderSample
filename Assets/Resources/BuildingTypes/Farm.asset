@@ -8,11 +8,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 751d5a78943e47d4393400b19ab23572, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b24bb26b8c7c7d47bb0378140f6ad1f, type: 3}
   m_Name: Farm
   m_EditorClassIdentifier: 
   price: 5
-  buyingButton: {fileID: 0}
-  building: {fileID: 114037210258155332, guid: 96b62898125915e4892dc72bd9f4e420, type: 2}
+  building: {fileID: 114919988302639692, guid: 96b62898125915e4892dc72bd9f4e420, type: 2}
   powerRate: -5
   happinesRate: -1
+  buyingButton: {fileID: 0}
+  commercialBuilding: {fileID: 114919988302639692, guid: 96b62898125915e4892dc72bd9f4e420,
+    type: 2}
+  moneyRate: 10
+  employeesNum: 2

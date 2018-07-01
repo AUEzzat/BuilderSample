@@ -10,8 +10,8 @@ GameObject:
   - component: {fileID: 433400}
   - component: {fileID: 3326930}
   - component: {fileID: 2365448}
-  - component: {fileID: 114755794638394886}
   - component: {fileID: 65643452561402632}
+  - component: {fileID: 114514374547945114}
   m_Layer: 0
   m_Name: Hovel_Red
   m_TagString: Building
@@ -97,7 +97,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 4, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114755794638394886
+--- !u!114 &114514374547945114
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -105,6 +105,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 194874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cc27915a7041934b8b7228921002701, type: 3}
+  m_Script: {fileID: 11500000, guid: b86b6539494ec8b41886c372357da54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
